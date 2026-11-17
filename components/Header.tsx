@@ -5,7 +5,9 @@ import { motion } from "motion/react";
 
 type Item = { href: string; label: string };
 
-export function Header({ brand, items }: { brand: string; items: Item[] }) {
+type Alt = { href: string; label: string; lang: string; name: string };
+
+export function Header({ brand, items, navLabel, alt }: { brand: string; items: Item[]; navLabel: string; alt: Alt }) {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState<string | null>(null);
 
@@ -29,7 +31,7 @@ export function Header({ brand, items }: { brand: string; items: Item[] }) {
     <header className="header" data-scrolled={scrolled}>
       <div className="wrap header-in">
         <a href="#topo" className="brand">{brand}</a>
-        <nav className="nav" aria-label="Principal">
+        <nav className="nav" aria-label={navLabel}>
           {items.map((i) => (
             <a key={i.href} href={i.href} aria-current={active === i.href ? "true" : undefined}>
               {i.label}
@@ -38,7 +40,7 @@ export function Header({ brand, items }: { brand: string; items: Item[] }) {
               )}
             </a>
           ))}
-          <a className="lang" href="/en/" hrefLang="en" lang="en">EN</a>
+          <a className="lang" href={alt.href} hrefLang={alt.lang} lang={alt.lang} aria-label={alt.name}>{alt.label}</a>
         </nav>
       </div>
     </header>

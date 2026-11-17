@@ -12,13 +12,8 @@ import {
 const ic = (C: unknown, size = 20) => { const I = C as React.ComponentType<{ size?: number }>; return <I size={size} />; };
 
 /** Componentes reais do Ocean DS (pacotes @useblu do npm), não recriações. */
-const tabs = [
-  { id: "chips", label: "Chips" },
-  { id: "hero", label: "Contextual Hero" },
-  { id: "list", label: "Lista com ações" },
-  { id: "icons", label: "Ícones" },
-] as const;
-type TabId = (typeof tabs)[number]["id"];
+const tabIds = ["chips", "hero", "list", "icons"] as const;
+type TabId = (typeof tabIds)[number];
 
 const payment = [
   { label: "Pix", value: "pix" },
@@ -27,7 +22,8 @@ const payment = [
   { label: "Tributos", value: "tributos" },
 ];
 
-export default function OceanDemo() {
+export default function OceanDemo({ tabLabels, label }: { tabLabels: string[]; label: string }) {
+  const tabs = tabIds.map((id, i) => ({ id, label: tabLabels[i] }));
   const [tab, setTab] = useState<TabId>("chips");
   const [picked, setPicked] = useState<string>("Nenhum filtro aplicado");
 
@@ -40,7 +36,7 @@ export default function OceanDemo() {
 
   return (
     <div className="ocean-demo">
-      <div className="ocean-tabs" role="tablist" aria-label="Componentes do Ocean DS">
+      <div className="ocean-tabs" role="tablist" aria-label={label}>
         {tabs.map((t, i) => (
           <button
             key={t.id}

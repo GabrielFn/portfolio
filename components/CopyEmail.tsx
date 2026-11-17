@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export function CopyEmail({ email }: { email: string }) {
+export function CopyEmail({ email, copy, copied: copiedLabel }: { email: string; copy: string; copied: string }) {
   const [copied, setCopied] = useState(false);
   return (
     <button
@@ -12,7 +12,7 @@ export function CopyEmail({ email }: { email: string }) {
         try { await navigator.clipboard.writeText(email); setCopied(true); setTimeout(() => setCopied(false), 2000); } catch {}
       }}
     >
-      <span aria-live="polite">{copied ? "Copiado" : "Copiar e-mail"}</span>
+      <span aria-live="polite">{copied ? copiedLabel : copy}</span>
     </button>
   );
 }

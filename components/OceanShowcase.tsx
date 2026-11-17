@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 // para não pesar no carregamento inicial (LCP/INP).
 const OceanDemo = dynamic(() => import("./OceanDemo"), { ssr: false, loading: () => <div className="ocean-demo ocean-loading" aria-hidden="true" /> });
 
-export function OceanShowcase() {
+export function OceanShowcase({ tabs, label }: { tabs: string[]; label: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const [show, setShow] = useState(false);
   useEffect(() => {
@@ -17,5 +17,5 @@ export function OceanShowcase() {
     io.observe(el);
     return () => io.disconnect();
   }, []);
-  return <div ref={ref} className="ocean-slot">{show ? <OceanDemo /> : <div className="ocean-demo ocean-loading" aria-hidden="true" />}</div>;
+  return <div ref={ref} className="ocean-slot">{show ? <OceanDemo tabLabels={tabs} label={label} /> : <div className="ocean-demo ocean-loading" aria-hidden="true" />}</div>;
 }

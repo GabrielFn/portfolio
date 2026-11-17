@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face { font-family: "Archivo"; src: url("../node_modules/@fontsource-variable/archivo/files/archivo-latin-wdth-normal.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; }
+* { margin: 0; box-sizing: border-box; }
+body { width: 1200px; height: 630px; background: #08090c; color: #eceef2; font-family: Archivo, sans-serif; position: relative; overflow: hidden; }
+.grid { position: absolute; inset: 0; background-image: linear-gradient(#222632 1px, transparent 1px), linear-gradient(90deg, #222632 1px, transparent 1px); background-size: 96px 96px; opacity: .45; -webkit-mask-image: radial-gradient(ellipse 70% 70% at 30% 40%, #000 25%, transparent 75%); }
+.light { position: absolute; width: 900px; height: 900px; left: -150px; top: -300px; background: radial-gradient(closest-side, rgba(183,196,255,.16), transparent 70%); }
+.wrap { position: absolute; inset: 0; padding: 72px 80px; display: flex; flex-direction: column; justify-content: space-between; }
+.status { display: flex; align-items: center; gap: 12px; font-size: 24px; color: #a4aab6; font-variation-settings: "wdth" 100; }
+.dot { width: 12px; height: 12px; border-radius: 50%; background: #4ade80; }
+h1 { font-weight: 800; font-variation-settings: "wdth" 125; font-size: 128px; line-height: .88; letter-spacing: -.035em; background: linear-gradient(180deg, #fff 30%, #9aa3b5 100%); -webkit-background-clip: text; color: transparent; }
+.foot { display: flex; justify-content: space-between; align-items: flex-end; font-size: 28px; font-variation-settings: "wdth" 100; }
+.role { font-weight: 600; }
+.url { color: #a4aab6; font-size: 24px; }
+</style></head>
+<body><div class="grid"></div><div class="light"></div>
+<div class="wrap">
+  <p class="status"><span class="dot"></span><span id="status"></span></p>
+  <h1>Gabriel<br>Fernandes</h1>
+  <div class="foot"><p class="role" id="role"></p><p class="url" id="url"></p></div>
+</div>
+<script>
+const q = new URLSearchParams(location.search);
+for (const k of ["status", "role", "url"]) document.getElementById(k).textContent = q.get(k) || "";
+</script>
+</body></html>

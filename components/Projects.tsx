@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import type { Project } from "@/content/pt";
+import type { Project } from "@/content/site";
 
 export function Projects({ items }: { items: Project[] }) {
   const [open, setOpen] = useState<string | null>(items[0]?.slug ?? null);
