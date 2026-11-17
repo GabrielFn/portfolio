@@ -41,7 +41,7 @@ export const pt = {
     contactLead: "Quer conversar sobre uma vaga ou projeto?",
     copy: "Copiar e-mail",
     copied: "Copiado",
-    footer: "Feito com Next.js, hospedado no Firebase",
+    footer: "Feito com Next.js, hospedado na Vercel",
     oceanTabs: ["Chips", "Contextual Hero", "Lista com ações", "Ícones"],
     oceanTabsLabel: "Componentes do Ocean DS",
   },

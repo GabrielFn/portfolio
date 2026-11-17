@@ -1,6 +1,6 @@
 # Portfólio — Gabriel Fernandes da Silva
 
-Site pessoal em Next.js (App Router) com exportação estática, hospedado no Firebase Hosting.
+Site pessoal em Next.js (App Router) com exportação estática, hospedado na Vercel.
 
 ## Rodar localmente
 
@@ -9,20 +9,13 @@ npm install
 npm run dev        # http://localhost:3000
 ```
 
-## Publicar no Firebase
+## Publicar na Vercel
 
-1. Crie o projeto no console do Firebase e troque `SEU-PROJETO-FIREBASE` em `.firebaserc` pelo ID dele.
-2. Instale a CLI e faça login (só na primeira vez):
-   ```bash
-   npm install -g firebase-tools
-   firebase login
-   ```
-3. Gere o site e publique:
-   ```bash
-   npm run build      # gera a pasta out/
-   firebase deploy --only hosting
-   ```
-4. Para usar seu domínio: Firebase Console › Hosting › Adicionar domínio personalizado. Depois atualize `site.url` em `content/site.ts` (é usado no canonical, no sitemap e no Open Graph).
+1. Suba o código para o repositório no GitHub.
+2. Em vercel.com › Add New › Project, importe o repositório. A Vercel detecta o Next.js sozinha; não precisa mudar nenhuma configuração.
+3. A partir daí, cada push na `main` publica o site, e cada branch ou pull request ganha um link de preview.
+4. Domínio: Project › Settings › Domains › adicione o seu domínio e siga as instruções de DNS. Depois atualize `site.url` em `content/site.ts` (é usado no canonical, no sitemap e no Open Graph) e refaça as imagens de Open Graph.
+5. Web Vitals de visitantes reais: Project › Speed Insights › Enable. O componente `<SpeedInsights />` já está nos layouts.
 
 ## Onde editar
 
@@ -48,7 +41,7 @@ npm run dev        # http://localhost:3000
 
 ## Decisões de performance
 
-- Exportação estática (`output: "export"`): HTML pronto servido pela CDN do Firebase.
+- Exportação estática (`output: "export"`): HTML pronto servido pela CDN da Vercel.
 - Fonte Archivo variável servida localmente (`@fontsource-variable/archivo`), sem requisição ao Google Fonts.
 - O Ocean DS (~160 KB de CSS/JS) só carrega quando a seção se aproxima da tela.
 - Respeita `prefers-reduced-motion`.

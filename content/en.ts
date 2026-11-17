@@ -46,7 +46,7 @@ export const en: Dict = {
     contactLead: "Want to talk about a role or a project?",
     copy: "Copy email",
     copied: "Copied",
-    footer: "Built with Next.js, hosted on Firebase",
+    footer: "Built with Next.js, hosted on Vercel",
     oceanTabs: ["Chips", "Contextual Hero", "Action list", "Icons"],
     oceanTabsLabel: "Ocean DS components",
   },
