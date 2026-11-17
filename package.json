@@ -1,0 +1,24 @@
+{
+  "name": "portfolio-gabriel",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "npx serve out"
+  },
+  "dependencies": {
+    "@fontsource-variable/archivo": "^5.3.0",
+    "@useblu/ocean-core": "^1.154.0",
+    "@useblu/ocean-icons-react": "^1.39.0",
+    "@useblu/ocean-react": "^1.154.0",
+    "motion": "^14.14.0",
+    "next": "^16",
+    "react": "^19",
+    "react-dom": "^19"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "typescript": "^5.9.3"
+  }
+}
