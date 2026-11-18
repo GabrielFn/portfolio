@@ -43,11 +43,15 @@ export function Projects({ items }: { items: Project[] }) {
                           ))}
                         </dl>
                       )}
-                      <span className="pstack">{p.stack}</span>
-                      {p.link && (
-                        <a className="btn btn-ghost" style={{ borderColor: "currentColor", color: "inherit", alignSelf: "flex-start" }} href={p.link.href} target={p.link.href.startsWith("http") ? "_blank" : undefined} rel="noopener">
-                          {p.link.label}
-                        </a>
+                      {p.stack && <span className="pstack">{p.stack}</span>}
+                      {p.links && (
+                        <div className="plinks">
+                          {p.links.map((l) => (
+                            <a key={l.href} className="btn btn-ghost" href={l.href} target="_blank" rel="noopener">
+                              {l.label}
+                            </a>
+                          ))}
+                        </div>
                       )}
                     </div>
                     <div className="pmock">

@@ -26,7 +26,16 @@ function jsonLd(d: Dict) {
       name: p.name,
       applicationCategory: p.kind,
       author: { "@type": "Person", name: site.name },
-      ...(p.link?.href.startsWith("http") ? { url: p.link.href } : {}),
+      ...(p.links?.[0] ? { url: p.links[0].href } : {}),
+      ...(p.store
+        ? {
+            operatingSystem: p.store.os,
+            applicationCategory: p.store.category,
+            ...(p.store.rating
+              ? { aggregateRating: { "@type": "AggregateRating", ratingValue: p.store.rating, ratingCount: p.store.ratingCount } }
+              : {}),
+          }
+        : {}),
     })),
   ],
   };

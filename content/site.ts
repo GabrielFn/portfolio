@@ -15,7 +15,8 @@ export type Project = {
   summary: string;
   stats?: { value: string; label: string }[];
   stack: string;
-  link?: { href: string; label: string };
+  links?: { href: string; label: string }[];
+  store?: { os: string; category: string; rating?: number; ratingCount?: number };
   color: string;
   ink: string;
   soft: string;

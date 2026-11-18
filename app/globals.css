@@ -231,3 +231,5 @@ img { max-width: 100%; display: block; }
 /* o Ocean usa Avenir (fonte licenciada); sem ela, cai na fonte do site em vez de serifada */
 .ocean-canvas, .ocean-canvas * { font-family: Avenir, "Archivo Variable", system-ui, sans-serif !important; font-variation-settings: "wdth" 100; }
 .ocean-canvas { align-items: center; height: 420px; padding: 32px; overflow: visible; }
+
+.plinks { display: flex; flex-wrap: wrap; gap: 10px; }

@@ -117,14 +117,15 @@ export const pt = {
       name: "Manual Téc. do Mecânico",
       kind: "App Android",
       summary:
-        "[Que problema o app resolve, em duas frases.] Público principal no Brasil e em Angola.",
+        "Manuais de mecânica e elétrica automotiva, vídeos de manutenção e mais de 2.800 códigos de falha OBD-II em português, com causas prováveis e dicas de reparo. Feito para mecânicos, eletricistas automotivos e estudantes.",
       stats: [
         { value: "264 mil", label: "instalações" },
-        { value: "4,36", label: "nota na loja" },
+        { value: "4,4", label: "nota na Play Store" },
         { value: "2,6 mil", label: "avaliações" },
       ],
-      stack: "React Native",
-      link: { href: "#", label: "Ver na Play Store" },
+      stack: "",
+      links: [{ href: "https://play.google.com/store/apps/details?id=com.guiadomecanico", label: "Ver na Play Store" }],
+      store: { os: "Android", category: "AutomotiveApplication", rating: 4.4, ratingCount: 2670 },
       color: "#F2B705",
       ink: "#2B2200",
       soft: "#FFF3C4",
@@ -132,11 +133,15 @@ export const pt = {
     {
       slug: "pmoc-rapido",
       name: "PMOC Rápido",
-      kind: "SaaS web",
+      kind: "App Android",
       summary:
-        "Técnicos de ar-condicionado montam o Plano de Manutenção, Operação e Controle exigido por lei, sem planilha.",
-      stack: "[stack]",
-      link: { href: "https://pmocrapido.com.br", label: "pmocrapido.com.br" },
+        "O técnico de ar-condicionado gera o PMOC no celular, com seu registro, logo, QR Code e cronograma, e sai do cliente com o PDF pronto. Funciona sem internet, registra visitas com fotos e assinatura e tem um portal para o cliente consultar os documentos.",
+      stack: "",
+      links: [
+        { href: "https://play.google.com/store/apps/details?id=br.app.pmocrapido", label: "Ver na Play Store" },
+        { href: "https://pmocrapido.com.br", label: "pmocrapido.com.br" },
+      ],
+      store: { os: "Android", category: "BusinessApplication" },
       color: "#7FD3F0",
       ink: "#12313E",
       soft: "#EEF8FC",
@@ -148,10 +153,7 @@ export const pt = {
       summary:
         "Você manda uma foto sua e outra do seu pet, e a IA diz o quanto vocês se parecem. Pacote premium pago via Pix.",
       stack: "Next.js, IA generativa, Pix",
-      link: {
-        href: "https://tal-dono-tal-pet.vercel.app",
-        label: "Abrir o app",
-      },
+      links: [{ href: "https://tal-dono-tal-pet.vercel.app", label: "Abrir o app" }],
       color: "#F59AB4",
       ink: "#45182A",
       soft: "#FDEFF3",

@@ -97,24 +97,30 @@ export const en: Dict = {
       slug: "manual-tec-do-mecanico",
       name: "Manual Téc. do Mecânico",
       kind: "Android app",
-      summary: "[What problem the app solves, in two sentences.] Main audience in Brazil and Angola.",
+      summary:
+        "Auto mechanics and electrical manuals, maintenance videos and 2,800+ OBD-II fault codes in Portuguese, with likely causes and repair tips. Built for mechanics, auto electricians and students.",
       stats: [
         { value: "264k", label: "installs" },
-        { value: "4.36", label: "store rating" },
+        { value: "4.4", label: "Google Play rating" },
         { value: "2.6k", label: "reviews" },
       ],
-      stack: "React Native",
-      link: { href: "#", label: "View on Google Play" },
+      stack: "",
+      links: [{ href: "https://play.google.com/store/apps/details?id=com.guiadomecanico", label: "View on Google Play" }],
+      store: pt.projects[0].store,
       ...color("manual-tec-do-mecanico"),
     },
     {
       slug: "pmoc-rapido",
       name: "PMOC Rápido",
-      kind: "Web SaaS",
+      kind: "Android app",
       summary:
-        "Air conditioning technicians build the maintenance plan (PMOC) required by Brazilian law without spreadsheets.",
-      stack: "[stack]",
-      link: { href: "https://pmocrapido.com.br", label: "pmocrapido.com.br" },
+        "Air conditioning technicians generate the maintenance plan required by Brazilian law (PMOC) on their phone, with their license, logo, QR code and schedule, and leave the client with the PDF ready. Works offline, logs visits with photos and signatures, and includes a portal where clients can view their documents.",
+      stack: "",
+      links: [
+        { href: "https://play.google.com/store/apps/details?id=br.app.pmocrapido", label: "View on Google Play" },
+        { href: "https://pmocrapido.com.br", label: "pmocrapido.com.br" },
+      ],
+      store: pt.projects[1].store,
       ...color("pmoc-rapido"),
     },
     {
@@ -124,7 +130,7 @@ export const en: Dict = {
       summary:
         "Upload a photo of yourself and one of your pet, and the AI tells you how much you look alike. Premium pack paid via Pix.",
       stack: "Next.js, generative AI, Pix",
-      link: { href: "https://tal-dono-tal-pet.vercel.app", label: "Open the app" },
+      links: [{ href: "https://tal-dono-tal-pet.vercel.app", label: "Open the app" }],
       ...color("tal-dono-tal-pet"),
     },
     {
