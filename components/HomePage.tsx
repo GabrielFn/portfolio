@@ -55,25 +55,27 @@ export function HomePage({ d }: { d: Dict }) {
           <div className="hero-grid" aria-hidden="true" />
           <div className="hero-light" aria-hidden="true" />
           <div className="wrap hero">
-          <p className="status"><span className="pulse" aria-hidden="true" />{d.availability}</p>
-          <div className="hero-id">
-            <HeroName lines={["Gabriel", "Fernandes"]} />
-            <img
-              className="hero-photo"
-              src="/gabriel.webp"
-              alt={site.name}
-              width={400}
-              height={400}
-              fetchPriority="high"
-              decoding="async"
-            />
-          </div>
-          <div className="hero-foot">
-            <p className="hero-role">{d.role}</p>
-            <p className="hero-intro">{intro}</p>
-            <div className="hero-cta">
-              <a className="btn btn-solid" href="#contato">{ui.contact}</a>
-              <a className="btn btn-ghost" href={site.cv} download>{ui.downloadCv}</a>
+          <div className="hero-layout">
+            <div className="hero-main">
+              <p className="status"><span className="pulse" aria-hidden="true" />{d.availability}</p>
+              <HeroName lines={["Gabriel", "Fernandes"]} />
+              <p className="hero-role">{d.role}</p>
+              <p className="hero-intro">{intro}</p>
+              <div className="hero-cta">
+                <a className="btn btn-solid" href="#contato">{ui.contact}</a>
+                <a className="btn btn-ghost" href={site.cv} download>{ui.downloadCv}</a>
+              </div>
+            </div>
+            <div className="hero-side">
+              <img
+                className="hero-photo"
+                src="/gabriel.webp"
+                alt={site.name}
+                width={400}
+                height={400}
+                fetchPriority="high"
+                decoding="async"
+              />
             </div>
           </div>
           <ul className="highlights" aria-label={ui.highlights}>
