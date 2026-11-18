@@ -6,6 +6,20 @@ import type { Project } from "@/content/site";
 export function Projects({ items, labels }: { items: Project[]; labels: { wip: string; prototype: string } }) {
   const [open, setOpen] = useState<string | null>(items[0]?.slug ?? null);
 
+  // Ao abrir um projeto, o que estava aberto acima dele fecha e a página "sobe".
+  // Durante a animação, compensamos o scroll para o título clicado ficar parado na tela.
+  const toggle = (slug: string, el: HTMLElement) => {
+    const startTop = el.getBoundingClientRect().top;
+    setOpen((cur) => (cur === slug ? null : slug));
+    const until = performance.now() + 700;
+    const keep = () => {
+      const delta = el.getBoundingClientRect().top - startTop;
+      if (Math.abs(delta) > 0.5) window.scrollBy({ top: delta, behavior: "instant" as ScrollBehavior });
+      if (performance.now() < until) requestAnimationFrame(keep);
+    };
+    requestAnimationFrame(keep);
+  };
+
   return (
     <div className="plist">
       {items.map((p) => {
@@ -19,7 +33,7 @@ export function Projects({ items, labels }: { items: Project[]; labels: { wip: s
                 className="prow-btn"
                 aria-expanded={isOpen}
                 aria-controls={`painel-${p.slug}`}
-                onClick={() => setOpen(isOpen ? null : p.slug)}
+                onClick={(e) => toggle(p.slug, e.currentTarget)}
               >
                 <span className="prow-fill" aria-hidden="true" />
                 <span className="prow-title">
