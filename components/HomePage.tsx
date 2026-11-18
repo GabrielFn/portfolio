@@ -56,7 +56,18 @@ export function HomePage({ d }: { d: Dict }) {
           <div className="hero-light" aria-hidden="true" />
           <div className="wrap hero">
           <p className="status"><span className="pulse" aria-hidden="true" />{d.availability}</p>
-          <HeroName lines={["Gabriel", "Fernandes"]} />
+          <div className="hero-id">
+            <HeroName lines={["Gabriel", "Fernandes"]} />
+            <img
+              className="hero-photo"
+              src="/gabriel.webp"
+              alt={site.name}
+              width={400}
+              height={400}
+              fetchPriority="high"
+              decoding="async"
+            />
+          </div>
           <div className="hero-foot">
             <p className="hero-role">{d.role}</p>
             <p className="hero-intro">{intro}</p>

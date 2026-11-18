@@ -301,6 +301,12 @@ img { max-width: 100%; display: block; }
   .shots[data-count="3"] .shot { height: 170px; }
 }
 
-/* foto no header */
-.brand { display: inline-flex; align-items: center; gap: 10px; }
-.avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 1px var(--line); }
+/* foto ao lado do nome principal */
+.hero-id { display: flex; align-items: flex-end; justify-content: space-between; gap: clamp(24px, 4vw, 64px); margin-top: 28px; }
+.hero-id .name { margin-top: 0; }
+.hero-photo { flex-shrink: 0; width: clamp(120px, 15vw, 220px); height: auto; aspect-ratio: 1; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 1px var(--line), 0 0 0 8px color-mix(in srgb, var(--accent) 8%, transparent), 0 30px 60px -30px rgba(0,0,0,.8); }
+@media (max-width: 640px) {
+  .hero-id { flex-direction: column-reverse; align-items: flex-start; gap: 20px; }
+  .hero-photo { width: 96px; }
+}
+.hero-id { justify-content: flex-start; align-items: center; }
