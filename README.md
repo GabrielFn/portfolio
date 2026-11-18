@@ -51,5 +51,5 @@ npm run dev        # http://localhost:3000
 - [ ] Descrição do Manual Téc. do Mecânico (`content/pt.ts`)
 - [ ] Stack do PMOC Rápido
 - [ ] Prints dos 4 apps
-- [ ] Domínio final
+- [ ] Domínio próprio (hoje: gabrielfn.vercel.app)
 - [ ] Páginas individuais de projeto

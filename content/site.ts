@@ -1,5 +1,5 @@
 export const site = {
-  url: "https://gabrielfn.dev", // [trocar pelo domínio final]
+  url: "https://gabrielfn.vercel.app",
   name: "Gabriel Fernandes da Silva",
   shortName: "Gabriel Fernandes",
   email: "gabrielxfds@gmail.com",
