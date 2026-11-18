@@ -108,7 +108,7 @@ export function HomePage({ d }: { d: Dict }) {
             <h2 id="t-proj" className="sec-title">{ui.projects}</h2>
             <p className="sec-note">{ui.projectsNote}</p>
           </div>
-          <Projects items={projects} />
+          <Projects items={projects} labels={{ wip: ui.wip, prototype: ui.prototype }} />
         </section>
 
         <section id="stack" className="wrap section" aria-labelledby="t-stack" style={{ paddingTop: 0 }}>

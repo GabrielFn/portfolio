@@ -49,6 +49,8 @@ export const en: Dict = {
     footer: "Built with Next.js, hosted on Vercel",
     oceanTabs: ["Chips", "Contextual Hero", "Action list", "Icons"],
     oceanTabsLabel: "Ocean DS components",
+    wip: "In development",
+    prototype: "Design prototype",
   },
   intro:
     "Twelve years building the front end of financial software: consortium systems at Newcon and B2B payments at Blu. On the side, I ship my own products.",
@@ -135,12 +137,15 @@ export const en: Dict = {
         "Upload a photo of yourself and one of your pet, and the AI tells you how much you look alike. Premium pack paid via Pix.",
       stack: "Next.js, generative AI, Pix",
       links: [{ href: "https://tal-dono-tal-pet.vercel.app", label: "Open the app" }],
+      shots: pt.projects[2].shots,
       ...color("tal-dono-tal-pet"),
     },
     {
       slug: "sacou",
       name: "Sacou",
-      kind: "Mobile app, in development",
+      kind: "Mobile app",
+      wip: true,
+      shots: pt.projects[3].shots,
       summary:
         "Runs pickup volleyball games: attendance list, team draw, winner-stays queue, rotation and a synced scoreboard.",
       stack: "React Native, Unistyles, ASP.NET Core (DDD), PostgreSQL",

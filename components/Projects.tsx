@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { Project } from "@/content/site";
 
-export function Projects({ items }: { items: Project[] }) {
+export function Projects({ items, labels }: { items: Project[]; labels: { wip: string; prototype: string } }) {
   const [open, setOpen] = useState<string | null>(items[0]?.slug ?? null);
 
   return (
@@ -23,6 +23,7 @@ export function Projects({ items }: { items: Project[] }) {
               >
                 <span className="prow-fill" aria-hidden="true" />
                 <span className="prow-name">{p.name}</span>
+                {p.wip && <span className="wip">{labels.wip}</span>}
                 <span className="prow-kind">
                   <span>{p.kind}</span>
                   <span className="prow-plus" aria-hidden="true">
@@ -59,19 +60,20 @@ export function Projects({ items }: { items: Project[] }) {
                     </div>
                     <div className="pmock">
                       {p.shots?.length ? (
-                        <div className="shots">
+                        <div className="shots" data-count={Math.min(p.shots.length, 3)}>
                           {p.shots.slice(0, 3).map((src, i) => (
                             <img
                               key={src}
                               className="shot"
-                              src={`${src}=w480-rw`}
-                              alt={`${p.name} (${i + 1}/3)`}
+                              src={src.startsWith("https://play-lh.") ? `${src}=w480-rw` : src}
+                              alt={`${p.name} (${i + 1}/${Math.min(p.shots!.length, 3)})`}
                               width={240}
                               height={427}
                               loading="lazy"
                               decoding="async"
                             />
                           ))}
+                          {p.wip && <span className="shots-cap">{labels.prototype}</span>}
                         </div>
                       ) : (
                         <div className="phone" aria-hidden="true">

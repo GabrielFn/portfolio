@@ -44,6 +44,8 @@ export const pt = {
     footer: "Feito com Next.js, hospedado na Vercel",
     oceanTabs: ["Chips", "Contextual Hero", "Lista com ações", "Ícones"],
     oceanTabsLabel: "Componentes do Ocean DS",
+    wip: "Em desenvolvimento",
+    prototype: "Protótipo de design",
   },
   intro:
     "Doze anos construindo o front-end de sistemas financeiros: consórcios na Newcon e pagamentos B2B na Blu. Nas horas vagas, publico meus próprios produtos.",
@@ -166,6 +168,7 @@ export const pt = {
         "Você manda uma foto sua e outra do seu pet, e a IA diz o quanto vocês se parecem. Pacote premium pago via Pix.",
       stack: "Next.js, IA generativa, Pix",
       links: [{ href: "https://tal-dono-tal-pet.vercel.app", label: "Abrir o app" }],
+      shots: ["/projetos/tal-dono-1.webp", "/projetos/tal-dono-2.webp"],
       color: "#F59AB4",
       ink: "#45182A",
       soft: "#FDEFF3",
@@ -173,11 +176,13 @@ export const pt = {
     {
       slug: "sacou",
       name: "Sacou",
-      kind: "App mobile, em desenvolvimento",
+      kind: "App mobile",
+      wip: true,
+      shots: ["/projetos/sacou-login.webp"],
       summary:
         "Organiza o racha de vôlei: lista de presença, sorteio de times, fila de quem perde sai, rotação e placar sincronizado.",
       stack: "React Native, Unistyles, ASP.NET Core (DDD), PostgreSQL",
-      color: "#8EA6FF",
+      color: "#FF7A45",
       ink: "#FFFFFF",
       soft: "#F4C430",
     },

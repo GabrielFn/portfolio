@@ -253,3 +253,16 @@ img { max-width: 100%; display: block; }
   .ocean-stage { max-width: 100%; }
   .exp-list li { padding-right: 0; }
 }
+
+/* com duas telas: leque simétrico */
+.shots[data-count="2"] .shot:nth-child(1) { transform: rotate(-5deg) translateX(16px); }
+.shots[data-count="2"] .shot:nth-child(2) { transform: rotate(5deg) translateX(-16px) translateY(-12px); z-index: 2; }
+@media (max-width: 860px) { .shots[data-count="2"] .shot { width: 42%; } }
+
+/* projeto em desenvolvimento */
+.prow-btn { flex-wrap: wrap; }
+.wip { margin-right: auto; align-self: center; font-size: 13px; font-weight: 600; font-variation-settings: "wdth" 100; letter-spacing: 0; padding: 6px 12px; border-radius: 999px; color: var(--c); border: 1px solid color-mix(in srgb, var(--c) 50%, transparent); background: color-mix(in srgb, var(--c) 10%, transparent); }
+.shots { position: relative; flex-wrap: wrap; }
+.shots[data-count="1"] .shot { aspect-ratio: auto; width: clamp(180px, 17vw, 240px); transform: rotate(-3deg); }
+.shots-cap { position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%); font-size: 13px; color: var(--text-2); white-space: nowrap; }
+@media (max-width: 860px) { .shots[data-count="1"] .shot { width: 60%; } }

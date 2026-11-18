@@ -18,6 +18,8 @@ export type Project = {
   links?: { href: string; label: string }[];
   /** URLs sem o sufixo de tamanho; o componente pede o tamanho certo à CDN da Play Store */
   icon?: string;
+  /** projeto ainda não publicado: mostra o selo e a legenda de protótipo */
+  wip?: boolean;
   shots?: string[];
   store?: { os: string; category: string; rating?: number; ratingCount?: number };
   color: string;
