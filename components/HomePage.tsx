@@ -69,12 +69,14 @@ export function HomePage({ d }: { d: Dict }) {
             <div className="hero-side">
               <img
                 className="hero-photo"
-                src="/gabriel.webp"
+                src="/gabriel-400.webp"
+                srcSet="/gabriel-240.webp 240w, /gabriel-400.webp 400w, /gabriel-632.webp 632w"
+                sizes="(max-width: 860px) 112px, 320px"
                 alt={site.name}
                 width={400}
                 height={400}
                 fetchPriority="high"
-                decoding="async"
+                loading="eager"
               />
             </div>
           </div>
