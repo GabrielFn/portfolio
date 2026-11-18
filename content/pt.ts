@@ -177,6 +177,15 @@ export const pt = {
       slug: "sacou",
       name: "Sacou",
       kind: "App mobile",
+      process: {
+        title: "Como estou desenvolvendo com IA",
+        items: [
+          "Antes do código, um agente de UX/UI e outro de pesquisa de concorrentes refinaram juntos o produto e as telas.",
+          "O Claude Code, rodando no meu PC, orquestra agentes que analisam, implementam, revisam e testam cada entrega em ciclo. Eu entro nas decisões de produto e arquitetura.",
+          "Decisões de arquitetura e segurança ficam registradas em ADRs, uma base de conhecimento que mantém o contexto entre sessões.",
+          "O back-end segue DDD e Clean Code, com o código em inglês e a interface em português.",
+        ],
+      },
       wip: true,
       shots: ["/projetos/sacou-login.webp"],
       summary:

@@ -335,3 +335,12 @@ img { max-width: 100%; display: block; }
   .shot, .shots[data-count="1"] .shot, .shots[data-count="2"] .shot { height: 280px; }
   .shots[data-count="3"] .shot { height: 230px; }
 }
+
+/* bloco "como estou desenvolvendo com IA" */
+.pprocess { margin-top: 4px; padding: 20px 22px; border-radius: 16px; background: color-mix(in srgb, var(--c) 8%, var(--bg)); border: 1px solid color-mix(in srgb, var(--c) 25%, transparent); max-width: 56ch; }
+.pprocess h4 { margin: 0 0 10px; font-size: 16px; font-weight: 700; color: var(--c); }
+.pprocess ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.pprocess li { position: relative; padding-left: 20px; font-size: 15px; line-height: 1.55; color: var(--text-2); }
+.pprocess li::before { content: ""; position: absolute; left: 0; top: 11px; width: 10px; height: 1.5px; background: var(--c); }
+.shots-cap { bottom: 0; }
+@media (max-width: 860px) { .pmock { height: 350px; } .shots[data-count="1"] { padding-bottom: 24px; } }

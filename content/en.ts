@@ -144,6 +144,15 @@ export const en: Dict = {
       slug: "sacou",
       name: "Sacou",
       kind: "Mobile app",
+      process: {
+        title: "How I'm building it with AI",
+        items: [
+          "Before any code, a UX/UI agent and a competitor-research agent refined the product and screens together.",
+          "Claude Code, running on my machine, orchestrates agents that analyze, implement, review and test each increment in a loop. I own the product and architecture decisions.",
+          "Architecture and security decisions are recorded as ADRs, a knowledge base that keeps context across sessions.",
+          "The back end follows DDD and Clean Code, with code in English and the UI in Portuguese.",
+        ],
+      },
       wip: true,
       shots: pt.projects[3].shots,
       summary:

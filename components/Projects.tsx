@@ -66,6 +66,16 @@ export function Projects({ items, labels }: { items: Project[]; labels: { wip: s
                         </dl>
                       )}
                       {p.stack && <span className="pstack">{p.stack}</span>}
+                      {p.process && (
+                        <div className="pprocess">
+                          <h4>{p.process.title}</h4>
+                          <ul>
+                            {p.process.items.map((it) => (
+                              <li key={it}>{it}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                       {p.links && (
                         <div className="plinks">
                           {p.links.map((l) => (

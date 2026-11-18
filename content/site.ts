@@ -20,6 +20,8 @@ export type Project = {
   icon?: string;
   /** projeto ainda não publicado: mostra o selo e a legenda de protótipo */
   wip?: boolean;
+  /** bloco extra no painel, por exemplo como o projeto está sendo construído */
+  process?: { title: string; items: string[] };
   shots?: string[];
   store?: { os: string; category: string; rating?: number; ratingCount?: number };
   color: string;
