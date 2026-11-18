@@ -60,7 +60,7 @@ img { max-width: 100%; display: block; }
 
 /* header */
 .header { position: sticky; top: 0; z-index: 50; transition: background-color .3s, border-color .3s; border-bottom: 1px solid transparent; }
-.header[data-scrolled="true"] { background: rgba(8, 9, 12, .72); backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px); border-color: var(--rule); }
+.header[data-scrolled="true"] { background: rgba(8, 9, 12, .86); backdrop-filter: saturate(1.4) blur(14px); border-color: var(--rule); }
 .header-in { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 72px; }
 .brand { font-weight: 700; font-variation-settings: "wdth" 125; text-decoration: none; font-size: 17px; letter-spacing: -.01em; }
 .nav { display: flex; gap: 4px; align-items: center; }
@@ -230,4 +230,4 @@ img { max-width: 100%; display: block; }
 @media (max-width: 860px) { .ocean-slot { grid-column: 1 / -1; } }
 /* o Ocean usa Avenir (fonte licenciada); sem ela, cai na fonte do site em vez de serifada */
 .ocean-canvas, .ocean-canvas * { font-family: Avenir, "Archivo Variable", system-ui, sans-serif !important; font-variation-settings: "wdth" 100; }
-.ocean-canvas { align-items: flex-start; height: 420px; padding: 32px; overflow: visible; }
+.ocean-canvas { align-items: center; height: 420px; padding: 32px; overflow: visible; }
