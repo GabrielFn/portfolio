@@ -288,5 +288,15 @@ img { max-width: 100%; display: block; }
 }
 @media (max-width: 860px) {
   .prow-btn { align-items: start; }
-  .pmock { order: -1; }
+}
+
+/* prints menores: proporcionais ao texto */
+.ppanel-in { align-items: center; }
+.pmock { height: 320px; }
+.shot, .shots[data-count="1"] .shot, .shots[data-count="2"] .shot { height: 250px; }
+.shots[data-count="3"] .shot { height: 230px; }
+@media (max-width: 860px) {
+  .pmock { height: 250px; }
+  .shot, .shots[data-count="1"] .shot, .shots[data-count="2"] .shot { height: 200px; }
+  .shots[data-count="3"] .shot { height: 170px; }
 }
