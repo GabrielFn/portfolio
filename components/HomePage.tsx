@@ -15,6 +15,7 @@ function jsonLd(d: Dict) {
       "@type": "Person",
       name: site.name,
       jobTitle: d.role,
+      image: `${site.url}/gabriel.jpg`,
       email: `mailto:${site.email}`,
       url: site.url + d.path,
       sameAs: [site.linkedin, site.github],

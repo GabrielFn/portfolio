@@ -21,6 +21,13 @@ export function buildMetadata(d: Dict, ogImage: string): Metadata {
     },
     twitter: { card: "summary_large_image", title, description: d.description, images: [ogImage] },
     robots: { index: true, follow: true },
+    icons: {
+      icon: [
+        { url: "/favicon.ico", sizes: "any" },
+        { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      ],
+      apple: "/apple-touch-icon.png",
+    },
   };
 }
 

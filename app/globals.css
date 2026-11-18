@@ -300,3 +300,7 @@ img { max-width: 100%; display: block; }
   .shot, .shots[data-count="1"] .shot, .shots[data-count="2"] .shot { height: 200px; }
   .shots[data-count="3"] .shot { height: 170px; }
 }
+
+/* foto no header */
+.brand { display: inline-flex; align-items: center; gap: 10px; }
+.avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 1px var(--line); }

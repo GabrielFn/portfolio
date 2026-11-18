@@ -29,7 +29,10 @@ export function Header({ brand, items, navLabel, alt }: { brand: string; items: 
   return (
     <header className="header" data-scrolled={scrolled}>
       <div className="wrap header-in">
-        <a href="#topo" className="brand">{brand}</a>
+        <a href="#topo" className="brand">
+          <img className="avatar" src="/avatar.webp" alt="" width={32} height={32} />
+          {brand}
+        </a>
         <nav className="nav" aria-label={navLabel}>
           {items.map((i) => (
             <a key={i.href} href={i.href} aria-current={active === i.href ? "true" : undefined}>
