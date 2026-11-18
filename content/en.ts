@@ -154,11 +154,9 @@ export const en: Dict = {
           "The volleyball rules exist in TypeScript, in the app, and in C#, in the API. Differential tests compared both across 7,808 simulated matches with zero differences.",
         ],
       },
-      links: [{ href: "https://github.com/GabrielFn/sacouapp", label: "View the code on GitHub" }],
       wip: true,
       shots: pt.projects[3].shots,
-      summary:
-        "Runs pickup volleyball games: attendance list, team draw, winner-stays queue, rotation and a synced scoreboard.",
+      summary: "Organizes pickup volleyball games.",
       stack: "React Native (Expo), TypeScript, ASP.NET Core (.NET 10), EF Core, PostgreSQL, pnpm + Turborepo monorepo",
       ...color("sacou"),
     },

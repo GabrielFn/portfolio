@@ -187,11 +187,9 @@ export const pt = {
           "As regras do vôlei existem em TypeScript, no app, e em C#, na API. Testes diferenciais compararam as duas em 7.808 partidas simuladas, sem nenhuma diferença.",
         ],
       },
-      links: [{ href: "https://github.com/GabrielFn/sacouapp", label: "Ver o código no GitHub" }],
       wip: true,
       shots: ["/projetos/sacou-login.webp"],
-      summary:
-        "Organiza o racha de vôlei: lista de presença, sorteio de times, fila de quem perde sai, rotação e placar sincronizado.",
+      summary: "Organiza racha de vôlei.",
       stack: "React Native (Expo), TypeScript, ASP.NET Core (.NET 10), EF Core, PostgreSQL, monorepo pnpm + Turborepo",
       color: "#FF7A45",
       ink: "#FFFFFF",
