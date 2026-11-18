@@ -242,3 +242,14 @@ img { max-width: 100%; display: block; }
 .shot:nth-child(2) { transform: translateY(-16px) scale(1.08); z-index: 2; }
 .shot:nth-child(3) { transform: rotate(6deg) translateX(-24px); z-index: 1; }
 @media (max-width: 860px) { .shot { width: 30%; } }
+
+/* no celular, as grades de 12 colunas viram uma coluna só:
+   11 espaços de 32px já passavam da largura da tela e o conteúdo vazava */
+@media (max-width: 860px) {
+  .hero-foot, .exp, .ocean, .about, .ppanel-in { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .hero-foot > *, .exp > *, .ocean > *, .about > *, .ppanel-in > * { grid-column: 1 / -1; }
+  .ocean { padding: 24px 20px; }
+  .ocean-canvas { padding: 20px 12px; height: 400px; }
+  .ocean-stage { max-width: 100%; }
+  .exp-list li { padding-right: 0; }
+}
