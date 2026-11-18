@@ -12,7 +12,6 @@
     "@useblu/ocean-icons-react": "^1.39.0",
     "@useblu/ocean-react": "^1.154.0",
     "@vercel/speed-insights": "^2.1.0",
-    "motion": "^14.14.0",
     "next": "^16",
     "react": "^19",
     "react-dom": "^19"

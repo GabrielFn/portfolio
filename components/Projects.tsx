@@ -1,12 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import type { Project } from "@/content/site";
 
 export function Projects({ items }: { items: Project[] }) {
   const [open, setOpen] = useState<string | null>(items[0]?.slug ?? null);
-  const reduce = useReducedMotion();
 
   return (
     <div className="plist">
@@ -33,23 +31,10 @@ export function Projects({ items }: { items: Project[] }) {
                 </span>
               </button>
             </h3>
-            <AnimatePresence initial={false}>
-              {isOpen && (
-                <motion.div
-                  id={`painel-${p.slug}`}
-                  className="ppanel"
-                  initial={{ height: 0 }}
-                  animate={{ height: "auto" }}
-                  exit={{ height: 0 }}
-                  transition={{ duration: reduce ? 0 : 0.6, ease: [0.22, 1, 0.36, 1] }}
-                >
+            <div id={`painel-${p.slug}`} className="ppanel" inert={!isOpen}>
+              <div className="ppanel-clip">
                   <div className="ppanel-in">
-                    <motion.div
-                      className="ppanel-text"
-                      initial={reduce ? false : { opacity: 0, y: 16 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.15, duration: 0.5 }}
-                    >
+                    <div className="ppanel-text">
                       <p>{p.summary}</p>
                       {p.stats && (
                         <dl className="pstats">
@@ -64,13 +49,8 @@ export function Projects({ items }: { items: Project[] }) {
                           {p.link.label}
                         </a>
                       )}
-                    </motion.div>
-                    <motion.div
-                      className="pmock"
-                      initial={reduce ? false : { opacity: 0, y: 40, rotate: 4 }}
-                      animate={{ opacity: 1, y: 0, rotate: 0 }}
-                      transition={{ delay: 0.2, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                    >
+                    </div>
+                    <div className="pmock">
                       <div className="phone" aria-hidden="true">
                         <div className="phone-screen">
                           <div className="sk" style={{ height: 22, width: "60%" }} />
@@ -81,11 +61,10 @@ export function Projects({ items }: { items: Project[] }) {
                           <span className="sk-label">print do app</span>
                         </div>
                       </div>
-                    </motion.div>
+                    </div>
                   </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+              </div>
+            </div>
           </article>
         );
       })}

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "motion/react";
 
 type Item = { href: string; label: string };
 
@@ -35,9 +34,7 @@ export function Header({ brand, items, navLabel, alt }: { brand: string; items: 
           {items.map((i) => (
             <a key={i.href} href={i.href} aria-current={active === i.href ? "true" : undefined}>
               {i.label}
-              {active === i.href && (
-                <motion.span layoutId="nav-dot" className="nav-dot" transition={{ type: "spring", stiffness: 500, damping: 40 }} />
-              )}
+              <span className="nav-dot" aria-hidden="true" />
             </a>
           ))}
           <a className="lang" href={alt.href} hrefLang={alt.lang} lang={alt.lang} aria-label={alt.name}>{alt.label}</a>
