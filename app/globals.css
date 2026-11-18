@@ -233,3 +233,12 @@ img { max-width: 100%; display: block; }
 .ocean-canvas { align-items: center; height: 420px; padding: 32px; overflow: visible; }
 
 .plinks { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* prints reais da Play Store */
+.picon { width: 64px; height: 64px; border-radius: 16px; box-shadow: 0 0 0 1px color-mix(in srgb, var(--c) 30%, transparent); }
+.shots { display: flex; justify-content: center; align-items: center; padding: 24px 0; }
+.shot { width: clamp(120px, 14vw, 200px); height: auto; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 18px; background: #0d0f14; box-shadow: 0 0 0 1px color-mix(in srgb, var(--c) 30%, transparent), 0 30px 60px -25px rgba(0,0,0,.7); }
+.shot:nth-child(1) { transform: rotate(-6deg) translateX(24px); z-index: 1; }
+.shot:nth-child(2) { transform: translateY(-16px) scale(1.08); z-index: 2; }
+.shot:nth-child(3) { transform: rotate(6deg) translateX(-24px); z-index: 1; }
+@media (max-width: 860px) { .shot { width: 30%; } }

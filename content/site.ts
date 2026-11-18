@@ -16,6 +16,9 @@ export type Project = {
   stats?: { value: string; label: string }[];
   stack: string;
   links?: { href: string; label: string }[];
+  /** URLs sem o sufixo de tamanho; o componente pede o tamanho certo à CDN da Play Store */
+  icon?: string;
+  shots?: string[];
   store?: { os: string; category: string; rating?: number; ratingCount?: number };
   color: string;
   ink: string;

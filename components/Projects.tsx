@@ -35,6 +35,9 @@ export function Projects({ items }: { items: Project[] }) {
               <div className="ppanel-clip">
                   <div className="ppanel-in">
                     <div className="ppanel-text">
+                      {p.icon && (
+                        <img className="picon" src={`${p.icon}=w128-rw`} alt="" width={64} height={64} loading="lazy" decoding="async" />
+                      )}
                       <p>{p.summary}</p>
                       {p.stats && (
                         <dl className="pstats">
@@ -55,16 +58,32 @@ export function Projects({ items }: { items: Project[] }) {
                       )}
                     </div>
                     <div className="pmock">
-                      <div className="phone" aria-hidden="true">
-                        <div className="phone-screen">
-                          <div className="sk" style={{ height: 22, width: "60%" }} />
-                          <div className="sk" style={{ height: 120 }} />
-                          <div className="sk" style={{ height: 44 }} />
-                          <div className="sk" style={{ height: 44 }} />
-                          <div className="sk" style={{ height: 44, width: "80%" }} />
-                          <span className="sk-label">print do app</span>
+                      {p.shots?.length ? (
+                        <div className="shots">
+                          {p.shots.slice(0, 3).map((src, i) => (
+                            <img
+                              key={src}
+                              className="shot"
+                              src={`${src}=w480-rw`}
+                              alt={`${p.name} (${i + 1}/3)`}
+                              width={240}
+                              height={427}
+                              loading="lazy"
+                              decoding="async"
+                            />
+                          ))}
                         </div>
-                      </div>
+                      ) : (
+                        <div className="phone" aria-hidden="true">
+                          <div className="phone-screen">
+                            <div className="sk" style={{ height: 22, width: "60%" }} />
+                            <div className="sk" style={{ height: 120 }} />
+                            <div className="sk" style={{ height: 44 }} />
+                            <div className="sk" style={{ height: 44 }} />
+                            <div className="sk" style={{ height: 44, width: "80%" }} />
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
               </div>

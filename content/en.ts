@@ -107,6 +107,8 @@ export const en: Dict = {
       stack: "",
       links: [{ href: "https://play.google.com/store/apps/details?id=com.guiadomecanico", label: "View on Google Play" }],
       store: pt.projects[0].store,
+      icon: pt.projects[0].icon,
+      shots: pt.projects[0].shots,
       ...color("manual-tec-do-mecanico"),
     },
     {
@@ -121,6 +123,8 @@ export const en: Dict = {
         { href: "https://pmocrapido.com.br", label: "pmocrapido.com.br" },
       ],
       store: pt.projects[1].store,
+      icon: pt.projects[1].icon,
+      shots: pt.projects[1].shots,
       ...color("pmoc-rapido"),
     },
     {
