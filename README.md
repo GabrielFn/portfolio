@@ -1,53 +1,71 @@
-# Portfólio — Gabriel Fernandes da Silva
+# Gabriel Fernandes da Silva — Portfolio
 
-Site pessoal em Next.js (App Router) com exportação estática, hospedado na Vercel.
+**Live:** [gabrielfn.vercel.app](https://gabrielfn.vercel.app) · [English version](https://gabrielfn.vercel.app/en/)
 
-## Rodar localmente
+Personal portfolio built with Next.js (App Router) as a static export, deployed on Vercel. It covers my experience, projects, stack and a live showcase of [Ocean DS](https://ocean-ds.github.io/ocean-web/), Blu's open source design system I contributed to.
+
+## Tech stack
+
+- **Next.js 16** with `output: "export"` (fully static HTML)
+- **React 19** and **TypeScript**
+- Plain CSS with custom properties, no UI framework
+- **Archivo** variable font, self-hosted via `@fontsource-variable/archivo`
+- **Ocean DS** (`@useblu/ocean-react`), loaded on demand
+- **Vercel** hosting with Speed Insights for real-user Web Vitals
+
+## Getting started
 
 ```bash
 npm install
 npm run dev        # http://localhost:3000
+npm run build      # static output in out/
 ```
 
-## Publicar na Vercel
+## Project structure
 
-1. Suba o código para o repositório no GitHub.
-2. Em vercel.com › Add New › Project, importe o repositório. A Vercel detecta o Next.js sozinha; não precisa mudar nenhuma configuração.
-3. A partir daí, cada push na `main` publica o site, e cada branch ou pull request ganha um link de preview.
-4. Domínio: Project › Settings › Domains › adicione o seu domínio e siga as instruções de DNS. Depois atualize `site.url` em `content/site.ts` (é usado no canonical, no sitemap e no Open Graph) e refaça as imagens de Open Graph.
-5. Web Vitals de visitantes reais: Project › Speed Insights › Enable. O componente `<SpeedInsights />` já está nos layouts.
-
-## Onde editar
-
-| O quê | Arquivo |
+| What | Where |
 | --- | --- |
-| Textos em português | `content/pt.ts` |
-| Textos em inglês | `content/en.ts` |
-| Domínio, e-mail e redes | `content/site.ts` |
-| Cores, tipografia e layout | `app/globals.css` (variáveis em `:root`) |
+| Portuguese copy | `content/pt.ts` |
+| English copy | `content/en.ts` |
+| Site URL, email and social links | `content/site.ts` |
+| Colors, typography and layout | `app/globals.css` (tokens in `:root`) |
 | SEO (title, description, Open Graph, hreflang) | `lib/meta.ts` |
-| Página (seções e JSON-LD) | `components/HomePage.tsx` |
-| Vitrine do Ocean DS | `components/OceanDemo.tsx` |
-| CV para download | `public/gabriel-fernandes-cv.pdf` |
+| Page sections and JSON-LD | `components/HomePage.tsx` |
+| Projects accordion | `components/Projects.tsx` |
+| Ocean DS showcase | `components/OceanDemo.tsx` |
+| Project screenshots | `public/projetos/` |
+| Downloadable CV | `public/gabriel-fernandes-cv.pdf` |
 
-## Idiomas
+## Internationalization
 
-- Português em `/` e inglês em `/en/`, cada um com seu `<html lang>`, canonical e `hreflang` apontando para o outro.
-- Cada idioma é um *route group* com layout próprio: `app/(pt)` e `app/(en)/en`.
+- Portuguese at `/` and English at `/en/`, each with its own `<html lang>`, canonical URL and `hreflang` links pointing to the other.
+- Each language is a route group with its own root layout: `app/(pt)` and `app/(en)/en`.
 
-## Imagem de compartilhamento (Open Graph)
+## SEO
 
-`public/og-pt.png` e `public/og-en.png` (1200×630) foram gerados a partir de `scripts/og-template.html`. Para refazer (por exemplo, ao trocar o domínio), abra o template no navegador com `?status=...&role=...&url=...` numa janela de 1200×630 e tire um print.
+- Per-language metadata, Open Graph and Twitter cards
+- JSON-LD: `Person` plus one `SoftwareApplication` per project (OS, category and Google Play rating where available)
+- Static `sitemap.xml` and `robots.txt`
+- Share images (`public/og-pt.png`, `public/og-en.png`, 1200×630) generated from `scripts/og-template.html`: open it at 1200×630 with `?status=...&role=...&url=...` and take a screenshot
 
-## Decisões de performance
+## Performance
 
-- Exportação estática (`output: "export"`): HTML pronto servido pela CDN da Vercel.
-- Fonte Archivo variável servida localmente (`@fontsource-variable/archivo`), sem requisição ao Google Fonts.
-- O Ocean DS (~160 KB de CSS/JS) só carrega quando a seção se aproxima da tela.
-- Respeita `prefers-reduced-motion`.
+- Static HTML served from Vercel's CDN
+- Self-hosted variable font, no request to Google Fonts
+- No animation library: transitions are plain CSS
+- Ocean DS (~160 KB of CSS/JS) only loads when its section gets close to the viewport
+- Screenshots are lazy loaded with fixed dimensions (no layout shift)
+- Respects `prefers-reduced-motion`
 
-## Pendências
+## Deployment
 
-- [ ] Prints dos 4 apps
-- [ ] Domínio próprio (hoje: gabrielfn.vercel.app)
-- [ ] Páginas individuais de projeto
+Every push to `main` deploys to production on Vercel, and every branch or pull request gets a preview URL. When changing the domain, update `site.url` in `content/site.ts` (used by canonical, sitemap and Open Graph) and regenerate the share images.
+
+## Commit convention
+
+Commits follow [Conventional Commits](https://www.conventionalcommits.org/) (`feat:`, `fix:`, `perf:`, `style:`, `docs:`, `build:`, `chore:`…). A Husky `commit-msg` hook runs commitlint and rejects messages that don't follow the convention.
+
+## Roadmap
+
+- [ ] Custom domain
+- [ ] Individual project pages
