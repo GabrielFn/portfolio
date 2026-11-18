@@ -4,7 +4,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "npx serve out"
+    "start": "npx serve out",
+    "prepare": "husky",
+    "commitlint": "commitlint --edit"
   },
   "dependencies": {
     "@fontsource-variable/archivo": "^5.3.0",
@@ -17,8 +19,11 @@
     "react-dom": "^19"
   },
   "devDependencies": {
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
     "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",
+    "husky": "^9.1.7",
     "typescript": "^5.9.3"
   }
 }
