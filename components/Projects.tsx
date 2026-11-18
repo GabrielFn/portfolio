@@ -22,8 +22,10 @@ export function Projects({ items, labels }: { items: Project[]; labels: { wip: s
                 onClick={() => setOpen(isOpen ? null : p.slug)}
               >
                 <span className="prow-fill" aria-hidden="true" />
-                <span className="prow-name">{p.name}</span>
-                {p.wip && <span className="wip">{labels.wip}</span>}
+                <span className="prow-title">
+                  <span className="prow-name">{p.name}</span>
+                  {p.wip && <span className="wip">{labels.wip}</span>}
+                </span>
                 <span className="prow-kind">
                   <span>{p.kind}</span>
                   <span className="prow-plus" aria-hidden="true">

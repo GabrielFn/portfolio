@@ -266,3 +266,27 @@ img { max-width: 100%; display: block; }
 .shots[data-count="1"] .shot { aspect-ratio: auto; width: clamp(180px, 17vw, 240px); transform: rotate(-3deg); }
 .shots-cap { position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%); font-size: 13px; color: var(--text-2); white-space: nowrap; }
 @media (max-width: 860px) { .shots[data-count="1"] .shot { width: 60%; } }
+
+/* posições estáveis: o botão fica sempre no canto direito e os prints sempre no mesmo lugar */
+.prow-btn { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; flex-wrap: nowrap; }
+.prow-title { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; min-width: 0; }
+.prow-name, .prow-btn:hover .prow-name, .prow[data-open="true"] .prow-name { --pw: 112; font-variation-settings: "wdth" 112; }
+.wip { margin-right: 0; }
+.prow-kind { justify-self: end; }
+
+.ppanel-in { align-items: start; }
+.pmock { height: 460px; align-items: center; }
+.shots { height: 100%; width: 100%; padding: 0; flex-wrap: nowrap; }
+.shot, .shots[data-count="1"] .shot, .shots[data-count="2"] .shot { height: 360px; width: auto; max-width: none; aspect-ratio: auto; object-fit: contain; }
+.shots-cap { bottom: 8px; }
+@media (max-width: 860px) {
+  .pmock { height: 340px; }
+  .shot, .shots[data-count="1"] .shot, .shots[data-count="2"] .shot { height: 270px; width: auto; }
+  .shot:nth-child(1), .shots[data-count="2"] .shot:nth-child(1) { transform: rotate(-6deg) translateX(18px); }
+  .shot:nth-child(3) { transform: rotate(6deg) translateX(-18px); }
+  .shots[data-count="3"] .shot { height: 210px; }
+}
+@media (max-width: 860px) {
+  .prow-btn { align-items: start; }
+  .pmock { order: -1; }
+}
