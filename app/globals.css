@@ -325,3 +325,13 @@ img { max-width: 100%; display: block; }
   .hero-side { order: -1; justify-content: flex-start; }
   .hero-photo { width: 112px; }
 }
+
+/* meio-termo no tamanho dos prints: legíveis sem dominar o texto */
+.pmock { height: 400px; }
+.shot, .shots[data-count="1"] .shot, .shots[data-count="2"] .shot { height: 320px; }
+.shots[data-count="3"] .shot { height: 300px; }
+@media (max-width: 860px) {
+  .pmock { height: 330px; }
+  .shot, .shots[data-count="1"] .shot, .shots[data-count="2"] .shot { height: 280px; }
+  .shots[data-count="3"] .shot { height: 230px; }
+}
