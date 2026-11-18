@@ -6,11 +6,13 @@ import type { Project } from "@/content/site";
 export function Projects({ items, labels }: { items: Project[]; labels: { wip: string; prototype: string } }) {
   const [open, setOpen] = useState<string | null>(items[0]?.slug ?? null);
 
-  // Ao abrir um projeto, o que estava aberto acima dele fecha e a página "sobe".
-  // Durante a animação, compensamos o scroll para o título clicado ficar parado na tela.
+  // No celular, ao abrir um projeto, o que estava aberto acima dele fecha e a página "sobe".
+  // Durante a animação, compensamos o scroll para o título tocado ficar parado na tela.
   const toggle = (slug: string, el: HTMLElement) => {
-    const startTop = el.getBoundingClientRect().top;
     setOpen((cur) => (cur === slug ? null : slug));
+    // só no celular (mesmo breakpoint do layout de uma coluna)
+    if (!window.matchMedia("(max-width: 860px)").matches) return;
+    const startTop = el.getBoundingClientRect().top;
     const until = performance.now() + 700;
     const keep = () => {
       const delta = el.getBoundingClientRect().top - startTop;
