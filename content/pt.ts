@@ -7,10 +7,10 @@ export const pt = {
   altPath: "/en/",
   altLabel: "EN",
   altLang: "en",
-  role: "Desenvolvedor front-end React/TypeScript",
+  role: "Desenvolvedor fullstack C#/.NET e React/TypeScript",
   description:
-    "Desenvolvedor front-end React/TypeScript com 12 anos em sistemas financeiros: micro frontends, design systems, React Native e desenvolvimento assistido por IA.",
-  titleSuffix: "Desenvolvedor front-end",
+    "Desenvolvedor fullstack com 12 anos em sistemas financeiros: APIs em C#/.NET, SQL Server e PostgreSQL, front-end em React/TypeScript, React Native e desenvolvimento assistido por IA.",
+  titleSuffix: "Desenvolvedor fullstack",
   availability: "Disponível para vagas remotas",
   nav: [
     { href: "#experiencia", label: "Experiência" },
@@ -48,7 +48,7 @@ export const pt = {
     prototype: "Protótipo de design",
   },
   intro:
-    "Doze anos construindo o front-end de sistemas financeiros: consórcios na Newcon e pagamentos B2B na Blu. Nas horas vagas, publico meus próprios produtos.",
+    "Doze anos construindo sistemas financeiros de ponta a ponta, da API à interface: consórcios na Newcon e pagamentos B2B na Blu. Nas horas vagas, publico meus próprios produtos.",
   highlights: [
     {
       value: "12 anos",
@@ -199,15 +199,17 @@ export const pt = {
 
   stack: [
     {
+      area: "Back-end",
+      items:
+        "C#, .NET, ASP.NET Core, Entity Framework Core, APIs REST, Node.js (Fastify), WCF/SOAP",
+    },
+    { area: "Banco de dados", items: "SQL Server, PostgreSQL" },
+    {
       area: "Front-end",
       items:
-        "React, TypeScript, JavaScript, Redux, React Query, micro frontends (single-spa, Module Federation), design systems, Storybook",
+        "React, Next.js, TypeScript, JavaScript, Redux, React Query, micro frontends (single-spa, Module Federation), design systems, Storybook",
     },
-    { area: "Mobile", items: "React Native" },
-    {
-      area: "Back-end",
-      items: "C#, ASP.NET Core, APIs REST, SQL Server, PostgreSQL",
-    },
+    { area: "Mobile", items: "React Native (Expo)" },
     {
       area: "IA",
       items:
@@ -224,7 +226,7 @@ export const pt = {
   ],
 
   about: [
-    "Comecei com C#/.NET e React em sistemas de consórcio. Nos últimos anos foquei em front-end com React e TypeScript, micro frontends e apps mobile, conduzindo funcionalidades da especificação técnica ao deploy.",
+    "Comecei como desenvolvedor fullstack com C#/.NET, SQL Server e React em sistemas de consórcio. Na Blu, foquei em React e TypeScript, micro frontends e apps mobile, conduzindo funcionalidades da especificação técnica ao deploy. Nos meus produtos, junto os dois lados: APIs em ASP.NET Core com PostgreSQL e apps em React Native.",
     "Hoje trabalho com desenvolvimento assistido por IA seguindo Spec-Driven Development: antes de gerar código, escrevo requisitos, contratos de componentes e critérios de aceite. A IA implementa a partir disso, e eu defino a arquitetura e reviso todo o código.",
   ],
 

@@ -14,10 +14,10 @@ export const en: Dict = {
   altPath: "/",
   altLabel: "PT",
   altLang: "pt-BR",
-  role: "Front-end developer, React/TypeScript",
+  role: "Full-stack developer, C#/.NET and React/TypeScript",
   description:
-    "Front-end developer (React/TypeScript) with 12 years in financial software: micro frontends, design systems, React Native and AI-assisted development.",
-  titleSuffix: "Front-end developer",
+    "Full-stack developer with 12 years in financial software: C#/.NET APIs, SQL Server and PostgreSQL, React/TypeScript front ends, React Native and AI-assisted development.",
+  titleSuffix: "Full-stack developer",
   availability: "Open to remote roles",
   nav: [
     { href: "#experiencia", label: "Experience" },
@@ -53,7 +53,7 @@ export const en: Dict = {
     prototype: "Design prototype",
   },
   intro:
-    "Twelve years building the front end of financial software: consortium systems at Newcon and B2B payments at Blu. On the side, I ship my own products.",
+    "Twelve years building financial software end to end, from the API to the UI: consortium systems at Newcon and B2B payments at Blu. On the side, I ship my own products.",
   highlights: [
     { value: "12 years", label: "in financial software, from consortium systems to B2B payments" },
     { value: "25 → 5 min", label: "deploy time at Blu after I moved 10+ modules to micro frontends" },
@@ -163,18 +163,22 @@ export const en: Dict = {
   ],
   stack: [
     {
+      area: "Back end",
+      items: "C#, .NET, ASP.NET Core, Entity Framework Core, REST APIs, Node.js (Fastify), WCF/SOAP",
+    },
+    { area: "Databases", items: "SQL Server, PostgreSQL" },
+    {
       area: "Front end",
       items:
-        "React, TypeScript, JavaScript, Redux, React Query, micro frontends (single-spa, Module Federation), design systems, Storybook",
+        "React, Next.js, TypeScript, JavaScript, Redux, React Query, micro frontends (single-spa, Module Federation), design systems, Storybook",
     },
-    { area: "Mobile", items: "React Native" },
-    { area: "Back end", items: "C#, ASP.NET Core, REST APIs, SQL Server, PostgreSQL" },
+    { area: "Mobile", items: "React Native (Expo)" },
     { area: "AI", items: "Claude Code, Spec-Driven Development, LLM pipelines, prompt engineering" },
     { area: "Quality", items: "Jest, Testing Library, Cypress, accessibility, Sentry, Datadog" },
     { area: "Infra", items: "Docker, Kubernetes, Harness (CI/CD), Git and GitHub" },
   ],
   about: [
-    "I started with C#/.NET and React on consortium systems. In recent years I've focused on the front end with React and TypeScript, micro frontends and mobile apps, owning features from technical spec to deploy.",
+    "I started as a full-stack developer with C#/.NET, SQL Server and React on consortium systems. At Blu I focused on React and TypeScript, micro frontends and mobile apps, owning features from technical spec to deploy. In my own products I bring both sides together: ASP.NET Core APIs with PostgreSQL and React Native apps.",
     "Today I work with AI-assisted development using Spec-Driven Development: before any code is generated, I write the requirements, component contracts and acceptance criteria. The AI implements from that, and I own the architecture and review all of the code.",
   ],
   education: [
